@@ -1,0 +1,21 @@
+{
+  "name": "ymd-hms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yyyymmdd",
+    "yyyy-mm-dd",
+    "yyyy/mm/dd",
+    "ddmmyyyy"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PhilTheAir/ymd-hms.git"
+  },
+  "author": "Phil Chen <clw.air@gmail.com>",
+  "license": "ISC"
+}

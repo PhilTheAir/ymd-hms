@@ -1,4 +1,7 @@
-https://travis-ci.org/PhilTheAir/ymd-hms.svg?branch=master
+
+
+### Status
+[![Build Status](https://travis-ci.org/PhilTheAir/ymd-hms.svg?branch=master.png)](https://travis-ci.org/PhilTheAir/ymd-hms.svg?branch=master)
 
 # ymd-hms
 

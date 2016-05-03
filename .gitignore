@@ -1,0 +1,4 @@
+# Specifies intentionally untracked files to ignore when using Git
+# https://github.com/PhilTheAir/ymd-hms
+
+node_modules/

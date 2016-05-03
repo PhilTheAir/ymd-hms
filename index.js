@@ -13,11 +13,11 @@ var min_00 = ('0' + min).slice(-2);
 var ss_00 = ('0' + ss).slice(-2);
 
 var ymd = {
-  yyyyddmm : () => {
+  yyyymmdd : () => {
     return "".concat(yyyy).concat(mm_00).concat(dd_00);
   },
 
-  yyyy_dd_mm : () => {
+  yyyy_mm_dd : () => {
     return "".concat(yyyy).concat('-').concat(mm_00).concat('-').concat(dd_00);
   },
 

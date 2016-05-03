@@ -1,10 +1,10 @@
 {
   "name": "ymd-hms",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [
     "yyyymmdd",
@@ -17,5 +17,10 @@
     "url": "https://github.com/PhilTheAir/ymd-hms.git"
   },
   "author": "Phil Chen <clw.air@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.4"
+  }
 }

@@ -1,3 +1,5 @@
+https://travis-ci.org/PhilTheAir/ymd-hms.svg?branch=master
+
 # ymd-hms
 
 ## Installation

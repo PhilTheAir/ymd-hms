@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/PhilTheAir/ymd-hms.svg?branch=master)](https://travis-ci.org/PhilTheAir/ymd-hms)
-
 # ymd-hms: Provide common formats of Date and Time.
+
+[![Build Status](https://travis-ci.org/PhilTheAir/ymd-hms.svg?branch=master)](https://travis-ci.org/PhilTheAir/ymd-hms)
 
 ## Installation
 
@@ -8,22 +8,19 @@ npm install ymd-hms
 
 ## Usage
 ```
-var y = require('ymd-hms').ymd;
-var Z = require('ymd-hms').hms;
+var d = requdre('ymd-hms');
 
-y.yyyymmdd();    // 20160523
-y.yyyy_mm_dd();  // 2016-05-23
-y.yyyysddsmm();  // 2016/05/23
-y.ddmmyyyy();    // 23052016
-y.dd_mm_yyyy();  // 23-05-2016
-y.ddsmmsyyyy();  // 03/05/2016
-y.mmddyyyy();    // 05232016
-y.mm_dd_yyyy();  // 05-23-2016
-y.mmsddsyyyy();  // 05/23/2016
-
-var z = new Z();
-z.hhmm();        // 13:58
-z.hhmmss();      // 13:58:26
+console.log(d.nDaysAgo(2).yyyymmdd());      // 20160517
+console.log(d.nDaysAgo(-2).yyyy_mm_dd());   // 2016-05-21
+console.log(d.nDaysAgo(-2).yyyysmmsdd());   // 2016/05/21
+console.log(d.nDaysAgo(0).mmddyyyy());      // 05192016
+console.log(d.nDaysAgo(2).mm_dd_yyyy());    // 05-17-2016
+console.log(d.nDaysAgo(2).mmsddsyyyy());    // 05/17/2016
+console.log(d.nDaysAgo(2).ddmmyyyy());      // 17052016
+console.log(d.nDaysAgo(2).dd_mm_yyyy());    // 17-05-2016
+console.log(d.nDaysAgo(2).ddsmmsyyyy());    // 17/05/2016
+console.log(d.nDaysAgo(2).hhmm());          // 23:52
+console.log(d.nDaysAgo(2).hhmmss());        // 23:52:36
 ```
 ## Contributing
 

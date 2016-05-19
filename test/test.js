@@ -1,8 +1,7 @@
 var chai = require('chai');
 var expect = chai.expect;
 var sinon = require('sinon');
-var y = require('..').ymd;
-var Z = require('..').hms;
+var y = require('..');
 
 describe('fake suite of tests', function() {
   it('has 2 equal to be greater than 0', function() {
@@ -16,20 +15,14 @@ describe('fake suite of tests', function() {
 
 describe('yyyymmdd and hhmmss', function() {
 
-  var d, h;
-  
   beforeEach(function() {
-    d = y.yyyymmdd();
-    var z = new Z();
-    h = z.hhmmss();
   });
 
   afterEach(function() {
   });
 
   it('returns yyyy-mm-dd and hh:mm:ss format', function() {
-    expect(d.length).to.equal(8);
-    expect(h.length).to.equal(8);
+    expect(y.nDaysAgo(1).yyyymmdd()).to.equal('20160518');
   });
 
 });

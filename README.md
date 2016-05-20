@@ -8,7 +8,7 @@ npm install ymd-hms
 
 ## Usage
 ```
-var d = requdre('ymd-hms');
+var d = require('ymd-hms');
 
 console.log(d.nDaysAgo(2).yyyymmdd());      // 20160517
 console.log(d.nDaysAgo(-2).yyyy_mm_dd());   // 2016-05-21

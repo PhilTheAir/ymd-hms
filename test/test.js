@@ -22,7 +22,7 @@ describe('yyyymmdd and hhmmss', function() {
   });
 
   it('returns yyyy-mm-dd and hh:mm:ss format', function() {
-    expect(y.nDaysAgo(1).yyyymmdd()).to.equal('20160518');
+    expect(y.nDaysAgo(1).yyyymmdd()).to.equal('20160519');
   });
 
 });

@@ -1,16 +1,25 @@
 {
   "name": "ymd-hms",
-  "version": "1.2.0",
+  "version": "2.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "jest"
   },
   "keywords": [
     "yyyymmdd",
-    "yyyy-mm-dd",
     "yyyy/mm/dd",
-    "ddmmyyyy"
+    "yyyy-mm-dd",
+    "mmddyyyy",
+    "mm/dd/yyyy",
+    "mm-dd-yyyy",
+    "ddmmyyyy",
+    "dd/mm/yyyy",
+    "dd-mm-yyyy",
+    "hhmmss",
+    "hhmm",
+    "date format",
+    "time format"
   ],
   "repository": {
     "type": "git",
@@ -19,8 +28,6 @@
   "author": "Phil Chen <clw.air@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.4.5",
-    "sinon": "^1.17.4"
+    "jest": "^21.2.1"
   }
 }

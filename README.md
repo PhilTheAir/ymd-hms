@@ -8,19 +8,50 @@ npm install ymd-hms
 
 ## Usage
 ```
-var d = require('ymd-hms');
+const dateFormatter = require('ymd-hms').dateFormatter;
+const timeFormatter = require('ymd-hms').timeFormatter;
 
-console.log(d.nDaysAgo(2).yyyymmdd());      // 20160517
-console.log(d.nDaysAgo(-2).yyyy_mm_dd());   // 2016-05-21
-console.log(d.nDaysAgo(-2).yyyysmmsdd());   // 2016/05/21
-console.log(d.nDaysAgo(0).mmddyyyy());      // 05192016
-console.log(d.nDaysAgo(2).mm_dd_yyyy());    // 05-17-2016
-console.log(d.nDaysAgo(2).mmsddsyyyy());    // 05/17/2016
-console.log(d.nDaysAgo(2).ddmmyyyy());      // 17052016
-console.log(d.nDaysAgo(2).dd_mm_yyyy());    // 17-05-2016
-console.log(d.nDaysAgo(2).ddsmmsyyyy());    // 17/05/2016
-console.log(d.nDaysAgo(2).hhmm());          // 23:52
-console.log(d.nDaysAgo(2).hhmmss());        // 23:52:36
+const d = new Date('December 7, 1995 03:24:00');
+
+console.log(dateFormatter(d, 'yyyymmdd'));
+// '19951207'
+
+console.log(dateFormatter(d, 'yyyy/mm/dd'));
+// '1995/12/07'
+
+console.log(dateFormatter(d, 'yyyy-mm-dd'));
+// '1995-12-07'
+
+console.log(dateFormatter(d, 'mmddyyyy'));
+// '12071995'
+
+console.log(dateFormatter(d, 'mm/dd/yyyy'));
+// '12/07/1995'
+
+console.log(dateFormatter(d, 'mm-dd-yyyy'));
+// '12-07-1995'
+
+console.log(dateFormatter(d, 'ddmmyyyy'));
+// '07121995'
+
+console.log(dateFormatter(d, 'dd/mm/yyyy'));
+// '07/12/1995'
+
+console.log(dateFormatter(d, 'dd-mm-yyyy'));
+// '07-12-1995'
+
+console.log(dateFormatter(d, 'other format'));
+// ''
+
+console.log(timeFormatter(d, 'hhmmss'));
+// '03:24:00'
+
+console.log(timeFormatter(d, 'hhmm'));
+// '03:24'
+
+console.log(timeFormatter(d, 'other format'));
+// ''
+
 ```
 ## Contributing
 

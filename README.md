@@ -33,8 +33,8 @@ strToDateTime('07/12/1995', 'dd/mm/yyyy')); // new Date('1995', '11', '07');
 addDays(d, 22, 'yyyymmdd'); // '19951229'
 addDays(d, -22, 'dd-mm-yyyy'); // '15-11-1995'
 
-addDaysFromStr(str, 'yyyymmdd', 11); // '19960109';
-addDaysFromStr(str, 'yyyymmdd', -11, 'dd-mm-yyyy'); // '18-12-1995'
+addDaysFromStr('19951229, 'yyyymmdd', 11); // '19960109';
+addDaysFromStr('19951229, 'yyyymmdd', -11, 'dd-mm-yyyy'); // '18-12-1995'
 
 const startDate = new Date('December 7, 1995 03:24:00');
 const endDay = new Date('December 17, 1995 03:24:00');

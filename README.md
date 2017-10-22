@@ -8,9 +8,7 @@ npm install ymd-hms
 
 ## Usage
 ```
-const dateFormatter = require('ymd-hms').dateFormatter;
-const timeFormatter = require('ymd-hms').timeFormatter;
-const addDays = require('./index').addDays;
+import { dateFormatter, timeFormatter, addDays } from 'ymd-hms';
 
 const d = new Date('December 7, 1995 03:24:00');
 

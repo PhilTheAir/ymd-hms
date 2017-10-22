@@ -10,6 +10,7 @@ npm install ymd-hms
 ```
 const dateFormatter = require('ymd-hms').dateFormatter;
 const timeFormatter = require('ymd-hms').timeFormatter;
+const addDays = require('./index').addDays;
 
 const d = new Date('December 7, 1995 03:24:00');
 
@@ -51,6 +52,12 @@ console.log(timeFormatter(d, 'hhmm'));
 
 console.log(timeFormatter(d, 'other format'));
 // ''
+
+console.log(addDays(d, 22, 'yyyymmdd'));
+// '19951229'
+
+console.log(addDays(d, -22, 'dd-mm-yyyy'));
+// '15-11-1995'
 
 ```
 ## Contributing

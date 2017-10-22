@@ -1,5 +1,6 @@
 const dateFormatter = require('./index').dateFormatter;
 const timeFormatter = require('./index').timeFormatter;
+const addDays = require('./index').addDays;
 
 describe('date format', () => {
   it('should return date in different format', () => {
@@ -23,5 +24,13 @@ describe('time format', () => {
     expect(timeFormatter(d, 'hhmmss')).toBe('03:24:00');
     expect(timeFormatter(d, 'hhmm')).toBe('03:24');
     expect(timeFormatter(d, '')).toBe('');
+  });
+});
+
+describe('add date', () => {
+  it('should return date', () => {
+    const d = new Date('December 7, 1995 03:24:00');
+    expect(addDays(d, 22, 'yyyymmdd')).toBe('19951229');
+    expect(addDays(d, -22, 'dd-mm-yyyy')).toBe('15-11-1995');
   });
 });

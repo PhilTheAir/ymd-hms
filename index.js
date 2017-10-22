@@ -46,6 +46,12 @@ const timeFormatter = (d, formatter) => {
 	}
 }
 
+const addDays = (date, days, formatter) => {
+  let newDate = new Date(date);
+  newDate.setDate(newDate.getDate() + days);
+  return dateFormatter(newDate, formatter);
+}
+
 module.exports.yyyy = yyyy;
 module.exports.mm = mm;
 module.exports.dd = dd;
@@ -54,3 +60,4 @@ module.exports.min = min;
 module.exports.ss = ss;
 module.exports.dateFormatter = dateFormatter;
 module.exports.timeFormatter = timeFormatter;
+module.exports.addDays = addDays;

@@ -1,6 +1,6 @@
 {
   "name": "ymd-hms",
-  "version": "2.6.1",
+  "version": "2.7.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,8 @@
     "minus days",
     "loop days",
     "iterate days",
-    "string to date time datetime"
+    "string to date time datetime",
+    "string date subtract subtraction"
   ],
   "repository": {
     "type": "git",

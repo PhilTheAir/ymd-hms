@@ -120,6 +120,14 @@ const iterateDaysFromStr = (strStartDate, strEndDate, fromFormatter, toFormatter
   return result;
 }
 
+const DateStrSubtraction = (dateStr1, dateStr2, formatter) => {
+  let date1 = strToDateTime(dateStr1, formatter);
+  let date2 = strToDateTime(dateStr2, formatter);
+  let timeDiff = Math.abs(date1 - date2);
+  let diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+  return diffDays;
+};
+
 module.exports.yyyy = yyyy;
 module.exports.mm = mm;
 module.exports.dd = dd;
@@ -133,3 +141,4 @@ module.exports.addDays = addDays;
 module.exports.addDaysFromStr = addDaysFromStr;
 module.exports.iterateDays = iterateDays;
 module.exports.iterateDaysFromStr = iterateDaysFromStr;
+module.exports.DateStrSubtraction = DateStrSubtraction;

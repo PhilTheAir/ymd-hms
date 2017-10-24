@@ -5,6 +5,7 @@ const addDays = require('./index').addDays;
 const addDaysFromStr = require('./index').addDaysFromStr;
 const iterateDays = require('./index').iterateDays;
 const iterateDaysFromStr = require('./index').iterateDaysFromStr;
+const DateStrSubtraction = require('./index').DateStrSubtraction;
 
 describe('date format', () => {
   it('should return date in different format', () => {
@@ -79,5 +80,14 @@ describe('iterate date from string', () => {
     const result2 = ['01/01/2017', '02/01/2017', '03/01/2017', '04/01/2017', '05/01/2017'];
     expect(iterateDaysFromStr(start, end, 'yyyy-mm-dd')).toEqual(result1);
     expect(iterateDaysFromStr(start, end, 'yyyy-mm-dd', 'dd/mm/yyyy')).toEqual(result2);
+  });
+});
+
+describe('subtract two string dates', () => {
+  it('should return date', () => {
+    const start = '2016-12-21';
+    const end = '2017-01-05';
+    const formatter = 'yyyy-mm-dd';
+    expect(DateStrSubtraction(start, end, formatter)).toEqual(15);
   });
 });

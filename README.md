@@ -8,7 +8,7 @@ npm install ymd-hms
 
 ## Usage
 ```
-import { dateFormatter, timeFormatter, strToDateTime, addDays, addDaysFromStr, iterateDays, iterateDaysFromStr } from 'ymd-hms';
+import { dateFormatter, timeFormatter, strToDateTime, addDays, addDaysFromStr, iterateDays, iterateDaysFromStr, DateStrSubtraction } from 'ymd-hms';
 
 const d = new Date('December 7, 1995 03:24:00');
 
@@ -48,6 +48,12 @@ iterateDaysFromStr(strStartDate, strEndDate, 'yyyy-mm-dd');
 // ['2017-01-01', '2017-01-02', '2017-01-03', '2017-01-04', '2017-01-05']
 iterateDaysFromStr(strStartDate, strEndDate, 'yyyy-mm-dd', 'dd/mm/yyyy');
 // ['01/01/2017', '02/01/2017', '03/01/2017', '04/01/2017', '05/01/2017']
+
+const start = '2016-12-21';
+const end = '2017-01-05';
+const formatter = 'yyyy-mm-dd';
+DateStrSubtraction(start, end, formatter);
+// 15
 
 ```
 ## Contributing

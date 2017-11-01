@@ -89,66 +89,7 @@ const strToDateTime = (str, formatter) => {
 }
 
 const strDateReformat = (str, fromFormatter, toFormatter) => {
-  let year, month, day;
-  switch (fromFormatter) {
-    case 'yyyymmdd':
-      year = str.slice(0, 4);
-      month = str.slice(4, 6);
-      day = str.slice(-2);
-      break;
-    case 'yyyy/mm/dd':
-    case 'yyyy-mm-dd':
-      year = str.slice(0, 4);
-      month = str.slice(5, 7);
-      day = str.slice(-2);
-      break;
-    case 'mmddyyyy':
-      year = str.slice(-4);
-      month = str.slice(0, 2);
-      day = str.slice(2, 4);
-      break;
-    case 'mm/dd/yyyy':
-    case 'mm-dd-yyyy':
-      year = str.slice(-4);
-      month = str.slice(0, 2);
-      day = str.slice(3, 5);
-      break;
-    case 'ddmmyyyy':
-      year = str.slice(-4);
-      month = str.slice(2, 4);
-      day = str.slice(0, 2);
-      break;
-    case 'dd/mm/yyyy':
-    case 'dd-mm-yyyy':
-      year = str.slice(-4);
-      month = str.slice(3, 5);
-      day = str.slice(0, 2);
-      break;
-    default:
-      return '';
-  }
-  switch (toFormatter) {
-    case 'yyyymmdd':
-      return `${year}${month}${day}`;
-    case 'yyyy/mm/dd':
-      return `${year}/${month}/${day}`;
-    case 'yyyy-mm-dd':
-      return `${year}-${month}-${day}`;
-    case 'mmddyyyy':
-      return `${month}${day}${year}`;
-    case 'mm/dd/yyyy':
-      return `${month}/${day}$/{year}`;
-    case 'mm-dd-yyyy':
-      return `${month}-${day}-${year}`;
-    case 'ddmmyyyy':
-      return `${day}${month}${year}`;
-    case 'dd/mm/yyyy':
-      return `${day}/${month}/${year}`;
-    case 'dd-mm-yyyy':
-      return `$${day}-${month}-${year}`;
-    default:
-      return `${year}${month}${day}`;
-  }
+  return addDaysFromStr(str, fromFormatter, 0, toFormatter);
 }
 
 const addDays = (date, days, formatter) => {

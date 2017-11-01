@@ -1,11 +1,12 @@
 const dateFormatter = require('./index').dateFormatter;
 const timeFormatter = require('./index').timeFormatter;
 const strToDateTime = require('./index').strToDateTime;
+const strDateReformat = require('./index').strDateReformat;
 const addDays = require('./index').addDays;
 const addDaysFromStr = require('./index').addDaysFromStr;
 const iterateDays = require('./index').iterateDays;
 const iterateDaysFromStr = require('./index').iterateDaysFromStr;
-const DateStrSubtraction = require('./index').DateStrSubtraction;
+const dateStrSubtraction = require('./index').dateStrSubtraction;
 
 describe('date format', () => {
   it('should return date in different format', () => {
@@ -43,6 +44,13 @@ describe('time format', () => {
     expect(strToDateTime('07121995', 'ddmmyyyy')).toEqual(new Date('1995', '11', '07'));
     expect(strToDateTime('07/12/1995', 'dd/mm/yyyy')).toEqual(new Date('1995', '11', '07'));
     expect(strToDateTime('07-12-1995', 'dd-mm-yyyy')).toEqual(new Date('1995', '11', '07'));
+  });
+});
+
+describe('time re-format', () => {
+  it('should return time in different format', () => {
+    expect(strDateReformat('19951207', 'yyyymmdd', 'dd/mm/yyyy')).toBe('07/12/1995');
+    expect(strDateReformat('1995/12/07', 'yyyy/mm/dd', 'mm-dd-yyyy')).toBe('12-07-1995');
   });
 });
 
@@ -88,6 +96,6 @@ describe('subtract two string dates', () => {
     const start = '2016-12-21';
     const end = '2017-01-05';
     const formatter = 'yyyy-mm-dd';
-    expect(DateStrSubtraction(start, end, formatter)).toEqual(15);
+    expect(dateStrSubtraction(start, end, formatter)).toEqual(15);
   });
 });

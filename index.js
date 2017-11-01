@@ -88,6 +88,69 @@ const strToDateTime = (str, formatter) => {
   return new Date(year, month - 1, day);
 }
 
+const strDateReformat = (str, fromFormatter, toFormatter) => {
+  let year, month, day;
+  switch (fromFormatter) {
+    case 'yyyymmdd':
+      year = str.slice(0, 4);
+      month = str.slice(4, 6);
+      day = str.slice(-2);
+      break;
+    case 'yyyy/mm/dd':
+    case 'yyyy-mm-dd':
+      year = str.slice(0, 4);
+      month = str.slice(5, 7);
+      day = str.slice(-2);
+      break;
+    case 'mmddyyyy':
+      year = str.slice(-4);
+      month = str.slice(0, 2);
+      day = str.slice(2, 4);
+      break;
+    case 'mm/dd/yyyy':
+    case 'mm-dd-yyyy':
+      year = str.slice(-4);
+      month = str.slice(0, 2);
+      day = str.slice(3, 5);
+      break;
+    case 'ddmmyyyy':
+      year = str.slice(-4);
+      month = str.slice(2, 4);
+      day = str.slice(0, 2);
+      break;
+    case 'dd/mm/yyyy':
+    case 'dd-mm-yyyy':
+      year = str.slice(-4);
+      month = str.slice(3, 5);
+      day = str.slice(0, 2);
+      break;
+    default:
+      return '';
+  }
+  switch (toFormatter) {
+    case 'yyyymmdd':
+      return `${year}${month}${day}`;
+    case 'yyyy/mm/dd':
+      return `${year}/${month}/${day}`;
+    case 'yyyy-mm-dd':
+      return `${year}-${month}-${day}`;
+    case 'mmddyyyy':
+      return `${month}${day}${year}`;
+    case 'mm/dd/yyyy':
+      return `${month}/${day}$/{year}`;
+    case 'mm-dd-yyyy':
+      return `${month}-${day}-${year}`;
+    case 'ddmmyyyy':
+      return `${day}${month}${year}`;
+    case 'dd/mm/yyyy':
+      return `${day}/${month}/${year}`;
+    case 'dd-mm-yyyy':
+      return `$${day}-${month}-${year}`;
+    default:
+      return `${year}${month}${day}`;
+  }
+}
+
 const addDays = (date, days, formatter) => {
   let newDate = new Date(date);
   newDate.setDate(newDate.getDate() + days);
@@ -120,7 +183,7 @@ const iterateDaysFromStr = (strStartDate, strEndDate, fromFormatter, toFormatter
   return result;
 }
 
-const DateStrSubtraction = (dateStr1, dateStr2, formatter) => {
+const dateStrSubtraction = (dateStr1, dateStr2, formatter) => {
   let date1 = strToDateTime(dateStr1, formatter);
   let date2 = strToDateTime(dateStr2, formatter);
   let timeDiff = Math.abs(date1 - date2);
@@ -137,8 +200,9 @@ module.exports.ss = ss;
 module.exports.dateFormatter = dateFormatter;
 module.exports.timeFormatter = timeFormatter;
 module.exports.strToDateTime = strToDateTime;
+module.exports.strDateReformat = strDateReformat;
 module.exports.addDays = addDays;
 module.exports.addDaysFromStr = addDaysFromStr;
 module.exports.iterateDays = iterateDays;
 module.exports.iterateDaysFromStr = iterateDaysFromStr;
-module.exports.DateStrSubtraction = DateStrSubtraction;
+module.exports.dateStrSubtraction = dateStrSubtraction;

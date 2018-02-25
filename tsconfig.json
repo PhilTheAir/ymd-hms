@@ -1,0 +1,16 @@
+{
+	"files": [
+		"src/calculate.ts",
+		"src/formatter.ts",
+		"src/index.ts",
+		"src/iterator.ts",
+		"src/strFormat.ts"
+	],
+	"compilerOptions": {
+		"noImplicitAny": true,
+		"target": "es2015",
+		"module": "commonjs",
+		"allowJs": true,
+		"outDir": "./dist"
+	}
+}

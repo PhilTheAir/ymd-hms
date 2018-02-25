@@ -1,9 +1,10 @@
 {
   "name": "ymd-hms",
-  "version": "2.9.0",
+  "version": "3.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
+    "start": "tsc -w",
     "test": "jest --watch"
   },
   "keywords": [
@@ -29,11 +30,35 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/PhilTheAir/ymd-hms.git"
+    "url": "https://github.com/PhilTheAir/TypeScript.git"
   },
-  "author": "Phil Chen <clw.air@gmail.com>",
+  "author": "Liwen (Phil) Chen <clw.air@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^21.2.1"
+    "@types/jest": "^22.1.3",
+    "babel-core": "^6.26.0",
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0",
+    "jest": "^21.2.1",
+    "ts-jest": "^22.0.4",
+    "tsify": "^3.0.4",
+    "typescript": "^2.6.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.9.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }

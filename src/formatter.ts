@@ -6,7 +6,8 @@ export const mm = (d: Date): string => ('0' + (d.getMonth() + 1)).slice(-2);
 
 export const dd = (d: Date): string => ('0' + d.getDate()).slice(-2);
 
-export const hh = (d: Date): string => ('0' + d.getHours()).slice(-2);
+export const hh12 = (d: Date): string => ('0' + d.getHours() % 12).slice(-2);
+export const hh24 = (d: Date): string => ('0' + d.getHours()).slice(-2);
 
 export const min = (d: Date): string => ('0' + d.getMinutes()).slice(-2);
 
@@ -39,10 +40,14 @@ export const dateToStr = (formatter: string, d = new Date()): string => {
 
 export const timeToStr = (formatter: string, d = new Date()): string => {
   switch (formatter) {
-    case strFormat.hhmmss:
-      return `${hh(d)}:${min(d)}:${ss(d)}`;
-    case strFormat.hhmm:
-      return `${hh(d)}:${min(d)}`;
+    case strFormat.hhmmss12:
+      return `${hh12(d)}:${min(d)}:${ss(d)}`;
+    case strFormat.hhmmss24:
+      return `${hh24(d)}:${min(d)}:${ss(d)}`;
+    case strFormat.hhmm12:
+      return `${hh12(d)}:${min(d)}`;
+    case strFormat.hhmm24:
+      return `${hh24(d)}:${min(d)}`;
     default:
       return '';
   }

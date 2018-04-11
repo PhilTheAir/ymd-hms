@@ -18,9 +18,11 @@ describe('date format', () => {
 
 describe('time format', () => {
   it('should return time in different format', () => {
-    const d = new Date('December 7, 1995 03:24:00');
-    expect(timeToStr('hh:mm:ss', d)).toBe('03:24:00');
-    expect(timeToStr('hh:mm', d)).toBe('03:24');
+    const d = new Date('December 7, 1995 19:24:00');
+    expect(timeToStr('hh:mm:ss12', d)).toBe('07:24:00');
+    expect(timeToStr('hh:mm:ss24', d)).toBe('19:24:00');
+    expect(timeToStr('hh:mm12', d)).toBe('07:24');
+    expect(timeToStr('hh:mm24', d)).toBe('19:24');
     expect(timeToStr('')).toBe('');
   });
 });

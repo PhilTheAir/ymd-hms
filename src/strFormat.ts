@@ -8,6 +8,8 @@ export enum strFormat {
   ddmmyyyy = 'ddmmyyyy',
   ddmmyyyySlash = 'dd/mm/yyyy',
   ddmmyyyyHyphen = 'dd-mm-yyyy',
-  hhmmss = 'hh:mm:ss',
-  hhmm = 'hh:mm',
+  hhmmss12 = 'hh:mm:ss12',
+  hhmmss24 = 'hh:mm:ss24',
+  hhmm12 = 'hh:mm12',
+  hhmm24 = 'hh:mm24',
 }

@@ -11,7 +11,9 @@ describe('date format', () => {
     expect(strFormat.ddmmyyyy).toBe('ddmmyyyy');
     expect(strFormat.ddmmyyyySlash).toBe('dd/mm/yyyy');
     expect(strFormat.ddmmyyyyHyphen).toBe('dd-mm-yyyy');
-    expect(strFormat.hhmmss).toBe('hh:mm:ss');
-    expect(strFormat.hhmm).toBe('hh:mm');
+    expect(strFormat.hhmmss12).toBe('hh:mm:ss12');
+    expect(strFormat.hhmmss24).toBe('hh:mm:ss24');
+    expect(strFormat.hhmm12).toBe('hh:mm12');
+    expect(strFormat.hhmm24).toBe('hh:mm24');
   });
 });

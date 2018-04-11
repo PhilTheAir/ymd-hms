@@ -4,7 +4,8 @@ const index_1 = require("./index");
 exports.yyyy = (d) => d.getFullYear().toString();
 exports.mm = (d) => ('0' + (d.getMonth() + 1)).slice(-2);
 exports.dd = (d) => ('0' + d.getDate()).slice(-2);
-exports.hh = (d) => ('0' + d.getHours()).slice(-2);
+exports.hh12 = (d) => ('0' + d.getHours() % 12).slice(-2);
+exports.hh24 = (d) => ('0' + d.getHours()).slice(-2);
 exports.min = (d) => ('0' + d.getMinutes()).slice(-2);
 exports.ss = (d) => ('0' + d.getSeconds()).slice(-2);
 exports.dateToStr = (formatter, d = new Date()) => {
@@ -33,10 +34,14 @@ exports.dateToStr = (formatter, d = new Date()) => {
 };
 exports.timeToStr = (formatter, d = new Date()) => {
     switch (formatter) {
-        case index_1.strFormat.hhmmss:
-            return `${exports.hh(d)}:${exports.min(d)}:${exports.ss(d)}`;
-        case index_1.strFormat.hhmm:
-            return `${exports.hh(d)}:${exports.min(d)}`;
+        case index_1.strFormat.hhmmss12:
+            return `${exports.hh12(d)}:${exports.min(d)}:${exports.ss(d)}`;
+        case index_1.strFormat.hhmmss24:
+            return `${exports.hh24(d)}:${exports.min(d)}:${exports.ss(d)}`;
+        case index_1.strFormat.hhmm12:
+            return `${exports.hh12(d)}:${exports.min(d)}`;
+        case index_1.strFormat.hhmm24:
+            return `${exports.hh24(d)}:${exports.min(d)}`;
         default:
             return '';
     }

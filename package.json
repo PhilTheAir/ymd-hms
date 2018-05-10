@@ -1,6 +1,6 @@
 {
   "name": "ymd-hms",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
@@ -30,7 +30,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/PhilTheAir/TypeScript.git"
+    "url": "https://github.com/PhilTheAir/ymd-hms.git"
   },
   "author": "Liwen (Phil) Chen <clw.air@gmail.com>",
   "license": "ISC",
